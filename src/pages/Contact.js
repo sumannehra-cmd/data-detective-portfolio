@@ -1,6 +1,9 @@
+import AnimatedPage from "../components/AnimatedPage";
 function Contact(){
 
 return(
+
+<AnimatedPage>
 
 <div className="section">
 
@@ -36,7 +39,7 @@ rel="noreferrer"
 </p>
 
 </div>
-
+</AnimatedPage>
 )
 
 }

@@ -1,72 +1,175 @@
+import { useState } from "react";
+import ProjectModal from "../components/ProjectModal";
+import { FaPython } from "react-icons/fa";
+import { SiPandas, SiScikitlearn } from "react-icons/si";
+import AnimatedPage from "../components/AnimatedPage";
+
 function CaseFiles(){
 
+const [selectedProject,setSelectedProject] = useState(null);
+const [filter,setFilter] = useState("all");
+const [search,setSearch] = useState("");
+
+const projects = [
+
+{
+title:"Customer Churn Prediction",
+category:"ml",
+tools:"Python | Pandas | ML",
+image:"/churn.png",
+description:"Predicts whether a customer will leave a telecom service using machine learning models.",
+github:"https://github.com/sumannehra-cmd/Customer-Churn-Prediction-Project.git",
+status:"Closed Case",
+color:"#22c55e"
+},
+
+{
+title:"Sentiment Analysis",
+category:"nlp",
+tools:"Python | NLP | Machine Learning",
+image:"/sentiment.png",
+description:"Analyzes customer reviews and determines whether sentiment is positive or negative.",
+github:"#",
+status:"Investigation Ongoing",
+color:"#facc15"
+},
+
+{
+title:"Sales Forecasting",
+category:"ml",
+image:"/forecast.png",
+tools:"Python | Time Series | ML",
+description:"Predicts future sales trends using time series forecasting models.",
+github:"#",
+status:"Upcoming Case",
+color:"#38bdf8"
+}
+
+];
+
 return(
+
+<AnimatedPage>
 
 <div className="section">
 
 <h2>Case Files</h2>
 
-<div className="grid">
+<div style={{margin:"20px"}}>
 
-<div className="card">
-
-<h3>Customer Churn Prediction</h3>
-
-<p>Python | Pandas | ML</p>
-
-<p style={{color:"#22c55e"}}>Closed Case</p>
-
-<a
-href="https://github.com/sumannehra-cmd/Customer-Churn-Prediction-Project.git"
-target="_blank"
-rel="noreferrer"
->
-
-<button style={{
-marginTop:"10px",
-padding:"8px 15px",
-background:"#22c55e",
-border:"none",
-borderRadius:"6px",
-cursor:"pointer"
-}}>
-
-View Code
-
+<button onClick={()=>setFilter("all")}>
+All
 </button>
 
-</a>
+<button
+onClick={()=>setFilter("ml")}
+style={{marginLeft:"10px"}}
+>
+Machine Learning
+</button>
+
+<button
+onClick={()=>setFilter("nlp")}
+style={{marginLeft:"10px"}}
+>
+NLP
+</button>
+
+<input
+type="text"
+placeholder="Search projects..."
+value={search}
+onChange={(e)=>setSearch(e.target.value)}
+style={{
+marginLeft:"20px",
+padding:"8px 12px",
+borderRadius:"6px",
+border:"none"
+}}
+/>
 
 </div>
 
+<div className="grid">
 
-<div className="card">
+{projects
+.filter(project => filter === "all" || project.category === filter)
+.filter(project =>
+project.title.toLowerCase().includes(search.toLowerCase()) ||
+project.tools.toLowerCase().includes(search.toLowerCase())
+)
+.map((project,index)=>(
 
-<h3>Sentiment Analysis</h3>
+<div
+key={index}
+className="card"
+onClick={()=>setSelectedProject(project)}
+style={{
+backdropFilter:"blur(10px)",
+background:"rgba(255,255,255,0.05)",
+border:"1px solid rgba(255,255,255,0.1)",
+padding:"25px",
+borderRadius:"12px",
+width:"260px",
+transition:"0.3s",
+boxShadow:"0px 0px 20px rgba(34,197,94,0.2)",
+cursor:"pointer"
+}}
+onMouseEnter={(e)=>{
+e.currentTarget.style.transform="scale(1.05)";
+e.currentTarget.style.boxShadow="0px 0px 30px rgba(34,197,94,0.6)";
+}}
+onMouseLeave={(e)=>{
+e.currentTarget.style.transform="scale(1)";
+e.currentTarget.style.boxShadow="0px 5px 20px rgba(0,0,0,0.4)";
+}}
+>
 
-<p>NLP | Machine Learning</p>
+<img
+src={project.image}
+alt={project.title}
+style={{
+width:"100%",
+borderRadius:"8px",
+marginBottom:"10px"
+}}
+/>
 
-<p style={{color:"#facc15"}}>Investigation Ongoing</p>
+<h3>{project.title}</h3>
+
+<p>{project.tools}</p>
+
+<div style={{marginTop:"10px"}}>
+
+<FaPython size={20} style={{margin:"5px"}}/>
+
+<SiPandas size={20} style={{margin:"5px"}}/>
+
+<SiScikitlearn size={20} style={{margin:"5px"}}/>
 
 </div>
 
-
-<div className="card">
-
-<h3>Sales Forecasting</h3>
-
-<p>Time Series | ML</p>
-
-<p style={{color:"#38bdf8"}}>Upcoming Case</p>
+<p style={{color:project.color}}>
+{project.status}
+</p>
 
 </div>
 
-</div>
+))}
 
 </div>
+
+<ProjectModal
+project={selectedProject}
+closeModal={()=>setSelectedProject(null)}
+/>
+
+</div>
+
+</AnimatedPage> 
 
 )
 
 }
 
-export default CaseFiles
+export default CaseFiles;

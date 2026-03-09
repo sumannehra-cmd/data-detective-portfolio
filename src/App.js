@@ -1,52 +1,35 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import CaseFiles from "./pages/CaseFiles";
 import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
 
-      <Navbar />
+<BrowserRouter>
 
-      <div className="section">
+<Navbar />
 
-        <h1 style={{fontSize:"48px"}}>Hi, I'm Suman</h1>
+<Routes>
 
-        <h2 style={{color:"#22c55e",marginTop:"10px"}}>
-          Data Detective
-        </h2>
+<Route path="/" element={<Home />} />
 
-        <p style={{maxWidth:"600px",margin:"20px auto"}}>
-        I analyze datasets, uncover hidden patterns,
-        and build machine learning models to solve
-        real-world problems.
-        </p>
+<Route path="/about" element={<About />} />
 
-        <a href="/resume.pdf" target="_blank" rel="noreferrer">
-        <button style={{
-          padding:"10px 20px",
-          background:"#22c55e",
-          border:"none",
-          borderRadius:"6px",
-          marginTop:"20px",
-          cursor:"pointer"
-          }}>
-            Download Resume
-            </button>
+<Route path="/projects" element={<CaseFiles />} />
 
-</a>
+<Route path="/dashboard" element={<Dashboard />} />
 
-      </div>
+<Route path="/contact" element={<Contact />} />
 
-      <About />
+</Routes>
 
-      <CaseFiles />
-      <Dashboard/>
-      <Contact/>
+</BrowserRouter>
 
-    </div>
   );
 }
 

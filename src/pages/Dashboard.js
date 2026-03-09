@@ -1,10 +1,13 @@
 import ChurnChart from "../components/ChurnChart";
 import SentimentChart from "../components/SentimentChart";
 import SalesChart from "../components/SalesChart";
+import AnimatedPage from "../components/AnimatedPage";
 
 function Dashboard(){
 
 return(
+
+<AnimatedPage>
 
 <div className="section">
 
@@ -19,6 +22,7 @@ return(
 <SalesChart/>
 
 </div>
+</AnimatedPage>
 
 )
 

@@ -1,6 +1,8 @@
+import AnimatedPage from "../components/AnimatedPage";
 function About(){
 
 return(
+<animatedPage>
 
 <div style={{
 padding:"60px",
@@ -19,7 +21,7 @@ patterns hidden inside data.
 </p>
 
 </div>
-
+</animatedPage> 
 )
 
 }

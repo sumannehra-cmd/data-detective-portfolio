@@ -1,23 +1,81 @@
+import { NavLink } from "react-router-dom";
+
 function Navbar(){
+
+const linkBase = {
+  margin: "15px",
+  textDecoration: "none",
+  fontWeight: "500",
+  transition: "0.2s"
+};
 
 return(
 
 <div style={{
+position:"sticky",
+top:0,
 display:"flex",
 justifyContent:"space-between",
+alignItems:"center",
 padding:"20px",
 background:"#1e293b",
-color:"white"
+color:"white",
+zIndex:1000
 }}>
 
-<h2>🕵️ Data Detective</h2>
+<h2 style={{margin:0}}>🕵️ Data Detective</h2>
 
 <div>
 
-<span style={{margin:"15px"}}>Home</span>
-<span style={{margin:"15px"}}>Case Files</span>
-<span style={{margin:"15px"}}>Data Lab</span>
-<span style={{margin:"15px"}}>Contact</span>
+<NavLink
+to="/"
+style={({isActive}) => ({
+...linkBase,
+color: isActive ? "#22c55e" : "#e2e8f0"
+})}
+>
+Home
+</NavLink>
+
+<NavLink
+to="/about"
+style={({isActive}) => ({
+...linkBase,
+color: isActive ? "#22c55e" : "#e2e8f0"
+})}
+>
+About
+</NavLink>
+
+<NavLink
+to="/projects"
+style={({isActive}) => ({
+...linkBase,
+color: isActive ? "#22c55e" : "#e2e8f0"
+})}
+>
+Case Files
+</NavLink>
+
+<NavLink
+to="/dashboard"
+style={({isActive}) => ({
+...linkBase,
+color: isActive ? "#22c55e" : "#e2e8f0"
+})}
+>
+Data Lab
+</NavLink>
+
+<NavLink
+to="/contact"
+style={({isActive}) => ({
+...linkBase,
+color: isActive ? "#22c55e" : "#e2e8f0"
+})}
+>
+Contact
+</NavLink>
 
 </div>
 
@@ -27,4 +85,4 @@ color:"white"
 
 }
 
-export default Navbar
+export default Navbar;
