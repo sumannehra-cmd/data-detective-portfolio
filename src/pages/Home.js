@@ -1,6 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 import Particles from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+
 import AnimatedPage from "../components/AnimatedPage";
 import ProjectGallery from "../components/ProjectGallery";
 import SkillsBars from "../components/SkillsBars";
@@ -10,10 +11,10 @@ import GithubStats from "../components/GithubStats";
 function Home(){
 
 const particlesInit = async (main) => {
-await loadFull(main);
+  await loadFull(main);
 };
 
-return(
+return (
 
 <AnimatedPage>
 
@@ -51,15 +52,19 @@ zIndex:-1
 }}
 />
 
-<div style={{
+<div
+style={{
 textAlign:"center",
 padding:"120px 20px"
-}}>
+}}
+>
 
-<h1 style={{
+<h1
+style={{
 fontSize:"48px",
 animation:"fadeUp 1s ease"
-}}>
+}}
+>
 Hi, I'm Suman
 </h1>
 
@@ -81,11 +86,13 @@ delaySpeed={1500}
 
 </h2>
 
-<p style={{
+<p
+style={{
 maxWidth:"600px",
 margin:"20px auto",
 color:"#94a3b8"
-}}>
+}}
+>
 I analyze datasets, uncover patterns, and build
 machine learning models to solve real-world problems.
 </p>
@@ -114,10 +121,7 @@ e.target.style.boxShadow="0 0 10px rgba(34,197,94,0.3)";
 }}
 >
 Download Resume
-
 </button>
-
-</a>
 
 </a>
 
@@ -135,7 +139,7 @@ Download Resume
 
 </AnimatedPage>
 
-)
+);
 
 }
 
