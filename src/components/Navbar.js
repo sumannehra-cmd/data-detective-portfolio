@@ -103,7 +103,13 @@ boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
 Open Case
 </NavLink>
 
-<NavLink to="/terminal" style={{margin:"15px",color:"#e2e8f0"}}>
+<NavLink
+to="/terminal"
+style={({isActive})=>({
+...linkBase,
+color:isActive ? "#22c55e" : "#cbd5f5"
+})}
+>
 Terminal
 </NavLink>
 

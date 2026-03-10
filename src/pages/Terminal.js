@@ -1,43 +1,77 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Terminal(){
 
+const navigate = useNavigate();
+
 const [command,setCommand] = useState("");
+
 const [logs,setLogs] = useState([
-"> Data Detective Terminal Initialized",
-"> Type 'help' to see commands"
+"> Data Detective Terminal v1.0",
+"> Type 'help' to view commands"
 ]);
 
-const handleCommand = (e) => {
+const runCommand = (cmd) => {
 
-if(e.key === "Enter"){
+let newLogs = [...logs, "> " + cmd];
 
-let newLogs = [...logs, "> " + command];
+const c = cmd.toLowerCase();
 
-if(command === "help"){
-newLogs.push("Commands:");
+if(c === "help"){
+newLogs.push("Available Commands:");
+newLogs.push("help");
 newLogs.push("load cases");
 newLogs.push("open case 1");
+newLogs.push("open case 2");
+newLogs.push("open dashboard");
+newLogs.push("open ml");
+newLogs.push("open contact");
 }
 
-else if(command === "load cases"){
+else if(c === "load cases"){
 newLogs.push("Case DS-001 : Customer Churn Investigation");
 newLogs.push("Case DS-002 : Sentiment Analysis");
 newLogs.push("Case DS-003 : Sales Forecast");
 }
 
-else if(command === "open case 1"){
-newLogs.push("Opening Case File...");
-newLogs.push("Evidence: Customer churn dataset analyzed");
+else if(c === "open case 1"){
+newLogs.push("Opening Case File DS-001...");
+setTimeout(()=>navigate("/projects"),700);
+}
+
+else if(c === "open case 2"){
+newLogs.push("Opening Case File DS-002...");
+setTimeout(()=>navigate("/projects"),700);
+}
+
+else if(c === "open dashboard"){
+newLogs.push("Accessing Evidence Lab...");
+setTimeout(()=>navigate("/dashboard"),700);
+}
+
+else if(c === "open ml"){
+newLogs.push("Launching Prediction Engine...");
+setTimeout(()=>navigate("/ml-demo"),700);
+}
+
+else if(c === "open contact"){
+newLogs.push("Opening Secure Channel...");
+setTimeout(()=>navigate("/contact"),700);
 }
 
 else{
-newLogs.push("Unknown command");
+newLogs.push("Unknown command. Type 'help'.");
 }
 
 setLogs(newLogs);
-setCommand("");
+};
 
+const handleKey = (e) => {
+
+if(e.key === "Enter"){
+runCommand(command);
+setCommand("");
 }
 
 };
@@ -72,7 +106,7 @@ overflowY:"auto"
 <input
 value={command}
 onChange={(e)=>setCommand(e.target.value)}
-onKeyDown={handleCommand}
+onKeyDown={handleKey}
 placeholder="Type command..."
 style={{
 marginTop:"20px",
@@ -86,7 +120,7 @@ color:"#22c55e"
 
 </div>
 
-)
+);
 
 }
 
