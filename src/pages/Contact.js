@@ -102,9 +102,11 @@ gap:"30px",
 flexWrap:"wrap"
 }}>
 
+<div className="contactCards">
+
 <a
 href="mailto:suman.23@st.niituniversity.in"
-className="contactLink"
+className="contactCard"
 >
 📧 Secure Email
 </a>
@@ -113,7 +115,7 @@ className="contactLink"
 href="https://www.linkedin.com/in/suman-nehra-0124a9298/"
 target="_blank"
 rel="noreferrer"
-className="contactLink"
+className="contactCard"
 >
 🔗 LinkedIn Network
 </a>
@@ -122,10 +124,12 @@ className="contactLink"
 href="https://github.com/sumannehra-cmd"
 target="_blank"
 rel="noreferrer"
-className="contactLink"
+className="contactCard"
 >
 💻 Evidence Repository
 </a>
+
+</div>
 
 </div>
 

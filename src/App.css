@@ -79,22 +79,33 @@ font-weight:500;
 
 }
 
-.contactLink{
+.contactCards{
 
+margin-top:60px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+.contactCard{
+
+background:rgba(255,255,255,0.05);
+padding:18px 28px;
+border-radius:10px;
 color:#22c55e;
 text-decoration:none;
 font-weight:500;
-font-size:18px;
-padding:10px 18px;
-border-radius:8px;
+border:1px solid rgba(255,255,255,0.1);
 transition:0.3s;
 
 }
 
-.contactLink:hover{
+.contactCard:hover{
 
-background:rgba(34,197,94,0.15);
-box-shadow:0 0 15px rgba(34,197,94,0.7);
-transform:translateY(-2px);
+transform:translateY(-4px);
+box-shadow:0 0 20px rgba(34,197,94,0.6);
+background:rgba(34,197,94,0.1);
 
 }
