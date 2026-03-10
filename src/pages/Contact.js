@@ -1,4 +1,29 @@
+import { useEffect, useState } from "react";
+
 function Contact(){
+
+const [text,setText] = useState("");
+const message = "Establishing secure communication channels...";
+
+useEffect(()=>{
+
+let i = 0;
+
+const interval = setInterval(()=>{
+
+setText(message.substring(0,i));
+i++;
+
+if(i > message.length){
+clearInterval(interval);
+}
+
+},40);
+
+return () => clearInterval(interval);
+
+},[]);
+
 
 return(
 
@@ -9,21 +34,23 @@ textAlign:"center"
 }}
 >
 
-<h2 style={{fontSize:"36px"}}>
-📂 Open Case File
+<h2 style={{
+fontSize:"36px",
+marginBottom:"10px"
+}}>
+🕵️ Communication Terminal
 </h2>
 
 <p style={{
-color:"#94a3b8",
-maxWidth:"600px",
-margin:"20px auto"
+color:"#22c55e",
+fontFamily:"monospace",
+marginBottom:"40px"
 }}>
-Need help uncovering insights from your data?
-The Data Detective is always ready for a new investigation.
+{text}
 </p>
 
+
 <div style={{
-marginTop:"40px",
 display:"flex",
 justifyContent:"center",
 gap:"30px",
@@ -32,103 +59,67 @@ flexWrap:"wrap"
 
 {/* EMAIL */}
 
-<div style={{
-background:"rgba(255,255,255,0.05)",
-padding:"30px",
-borderRadius:"12px",
-width:"260px",
-backdropFilter:"blur(10px)",
-border:"1px solid rgba(255,255,255,0.1)",
-transition:"0.3s"
-}}>
+<div className="detectiveCard">
 
 <h3>📧 Secure Channel</h3>
 
-<p style={{marginTop:"10px"}}>
+<p>Direct encrypted communication.</p>
 
 <a
 href="mailto:suman.23@st.niituniversity.in"
-style={{color:"#22c55e",textDecoration:"none"}}
+className="detectiveLink"
 >
-
-Send Email
-
+Send Message
 </a>
-
-</p>
 
 </div>
 
 
 {/* LINKEDIN */}
 
-<div style={{
-background:"rgba(255,255,255,0.05)",
-padding:"30px",
-borderRadius:"12px",
-width:"260px",
-backdropFilter:"blur(10px)",
-border:"1px solid rgba(255,255,255,0.1)",
-transition:"0.3s"
-}}>
+<div className="detectiveCard">
 
 <h3>🔗 LinkedIn Network</h3>
 
-<p style={{marginTop:"10px"}}>
+<p>Professional investigation network.</p>
 
 <a
 href="https://www.linkedin.com/in/suman-nehra-0124a9298/"
 target="_blank"
-rel="noopener noreferrer"
-style={{color:"#22c55e",textDecoration:"none"}}
+rel="noreferrer"
+className="detectiveLink"
 >
-
-View LinkedIn
-
+Open Profile
 </a>
-
-</p>
 
 </div>
 
 
 {/* GITHUB */}
 
-<div style={{
-background:"rgba(255,255,255,0.05)",
-padding:"30px",
-borderRadius:"12px",
-width:"260px",
-backdropFilter:"blur(10px)",
-border:"1px solid rgba(255,255,255,0.1)",
-transition:"0.3s"
-}}>
+<div className="detectiveCard">
 
 <h3>💻 Evidence Repository</h3>
 
-<p style={{marginTop:"10px"}}>
+<p>All case files and ML experiments.</p>
 
 <a
 href="https://github.com/sumannehra-cmd"
 target="_blank"
-rel="noopener noreferrer"
-style={{color:"#22c55e",textDecoration:"none"}}
+rel="noreferrer"
+className="detectiveLink"
 >
-
-View GitHub
-
+View Evidence
 </a>
 
-</p>
-
 </div>
 
 </div>
+
 
 <p style={{
-marginTop:"60px",
-color:"#64748b",
-fontSize:"14px"
+marginTop:"70px",
+color:"#64748b"
 }}>
 🕵️ Every dataset hides a story. Let’s uncover it.
 </p>
