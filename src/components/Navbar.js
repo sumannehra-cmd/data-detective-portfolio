@@ -2,13 +2,11 @@ import { NavLink } from "react-router-dom";
 
 function Navbar(){
 
-const linkBase = {
-  margin: "15px",
-  textDecoration: "none",
-  fontWeight: "500",
-  transition: "0.25s",
-  padding: "6px 10px",
-  borderRadius: "6px"
+const linkBase={
+margin:"15px",
+textDecoration:"none",
+fontWeight:"500",
+transition:"0.2s"
 };
 
 return(
@@ -19,98 +17,40 @@ top:0,
 display:"flex",
 justifyContent:"space-between",
 alignItems:"center",
-padding:"18px 30px",
-background:"rgba(15,23,42,0.95)",
-backdropFilter:"blur(8px)",
-borderBottom:"1px solid rgba(255,255,255,0.05)",
+padding:"20px",
+background:"#020617",
 color:"white",
 zIndex:1000
 }}>
 
-<h2 style={{
-margin:0,
-color:"#22c55e",
-letterSpacing:"1px"
-}}>
-🕵️ Data Detective HQ
+<h2 style={{margin:0,color:"#38bdf8"}}>
+🧠 Data Detective Lab
 </h2>
 
 <div>
 
-<NavLink
-to="/"
-style={({isActive}) => ({
-...linkBase,
-color: isActive ? "#22c55e" : "#cbd5f5",
-boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
-})}
->
-HQ
+<NavLink to="/" style={({isActive})=>({...linkBase,color:isActive?"#38bdf8":"#cbd5f5"})}>
+Home
 </NavLink>
 
-<NavLink
-to="/about"
-style={({isActive}) => ({
-...linkBase,
-color: isActive ? "#22c55e" : "#cbd5f5",
-boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
-})}
->
-Detective Profile
+<NavLink to="/about" style={({isActive})=>({...linkBase,color:isActive?"#38bdf8":"#cbd5f5"})}>
+Profile
 </NavLink>
 
-<NavLink
-to="/projects"
-style={({isActive}) => ({
-...linkBase,
-color: isActive ? "#22c55e" : "#cbd5f5",
-boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
-})}
->
-Case Files
+<NavLink to="/projects" style={({isActive})=>({...linkBase,color:isActive?"#38bdf8":"#cbd5f5"})}>
+Projects
 </NavLink>
 
-<NavLink
-to="/dashboard"
-style={({isActive}) => ({
-...linkBase,
-color: isActive ? "#22c55e" : "#cbd5f5",
-boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
-})}
->
-Evidence Lab
+<NavLink to="/dashboard" style={({isActive})=>({...linkBase,color:isActive?"#38bdf8":"#cbd5f5"})}>
+Data Lab
 </NavLink>
 
-<NavLink
-to="/ml-demo"
-style={({isActive}) => ({
-...linkBase,
-color: isActive ? "#22c55e" : "#cbd5f5",
-boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
-})}
->
-Prediction Engine
-</NavLink>
-
-<NavLink
-to="/contact"
-style={({isActive}) => ({
-...linkBase,
-color: isActive ? "#22c55e" : "#cbd5f5",
-boxShadow: isActive ? "0 0 10px rgba(34,197,94,0.4)" : "none"
-})}
->
+<NavLink to="/contact" style={({isActive})=>({...linkBase,color:isActive?"#38bdf8":"#cbd5f5"})}>
 Open Case
 </NavLink>
 
-<NavLink
-to="/terminal"
-style={({isActive})=>({
-...linkBase,
-color:isActive ? "#22c55e" : "#cbd5f5"
-})}
->
-Terminal
+<NavLink to="/terminal" style={({isActive})=>({...linkBase,color:isActive?"#38bdf8":"#cbd5f5"})}>
+Console
 </NavLink>
 
 </div>
@@ -118,7 +58,6 @@ Terminal
 </div>
 
 )
-
 }
 
-export default Navbar;
+export default Navbar

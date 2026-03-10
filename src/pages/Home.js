@@ -86,15 +86,14 @@ delaySpeed={1500}
 
 </h2>
 
-<p
-style={{
+<p style={{
 maxWidth:"600px",
 margin:"20px auto",
 color:"#94a3b8"
-}}
->
-I analyze datasets, uncover patterns, and build
-machine learning models to solve real-world problems.
+}}>
+I investigate datasets, uncover hidden patterns,
+and build machine learning models to solve real-world problems.
+Welcome to my Data Detective Lab.
 </p>
 
 <a href="/resume.pdf" target="_blank" rel="noreferrer">

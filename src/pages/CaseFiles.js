@@ -13,7 +13,7 @@ const [search,setSearch] = useState("");
 const projects = [
 
 {
-title:"Customer Churn Prediction",
+title:"Customer Churn Investigation",
 category:"ml",
 tools:"Python | Pandas | ML",
 image:"/churn.png",
@@ -24,7 +24,7 @@ color:"#22c55e"
 },
 
 {
-title:"Sentiment Analysis",
+title:"Customer Sentiment Intelligence",
 category:"nlp",
 tools:"Python | NLP | Machine Learning",
 image:"/sentiment.png",
@@ -35,7 +35,7 @@ color:"#facc15"
 },
 
 {
-title:"Sales Forecasting",
+title:"Sales Forecast Investigation",
 category:"ml",
 image:"/forecast.png",
 tools:"Python | Time Series | ML",
@@ -53,7 +53,7 @@ return(
 
 <div className="section">
 
-<h2>Case Files</h2>
+<h2>📊 Investigation Projects</h2>
 
 <div style={{margin:"20px"}}>
 
