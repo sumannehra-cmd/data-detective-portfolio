@@ -77,6 +77,13 @@ color: isActive ? "#22c55e" : "#e2e8f0"
 Contact
 </NavLink>
 
+<NavLink
+to="/ml-demo"
+style={{margin:"15px",color:"#e2e8f0",textDecoration:"none"}}
+>
+ML Demo
+</NavLink>
+
 </div>
 
 </div>

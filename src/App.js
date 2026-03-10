@@ -6,6 +6,7 @@ import CaseFiles from "./pages/CaseFiles";
 import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import MLDemo from "./pages/MLDemo";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
 <Route path="/dashboard" element={<Dashboard />} />
 
 <Route path="/contact" element={<Contact />} />
+
+<Route path="/ml-demo" element={<MLDemo />} />
 
 </Routes>
 
