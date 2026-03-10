@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
@@ -9,7 +10,59 @@ import Home from "./pages/Home";
 import MLDemo from "./pages/MLDemo";
 
 function App() {
-  return (
+
+const [detectiveMode,setDetectiveMode] = useState(false);
+
+useEffect(()=>{
+
+const handleKey = (e) => {
+
+if(e.key === "d" || e.key === "D"){
+setDetectiveMode(true);
+
+setTimeout(()=>{
+setDetectiveMode(false);
+},3000);
+
+}
+
+};
+
+window.addEventListener("keydown",handleKey);
+
+return () => {
+window.removeEventListener("keydown",handleKey);
+};
+
+},[]);
+
+return (
+
+<div>
+
+{detectiveMode && (
+
+<div
+style={{
+position:"fixed",
+top:"20px",
+right:"20px",
+background:"#0f172a",
+color:"#22c55e",
+padding:"15px 20px",
+borderRadius:"8px",
+boxShadow:"0 0 15px rgba(34,197,94,0.6)",
+zIndex:9999
+}}
+>
+
+🕵️ Detective Mode Activated
+<br/>
+Accessing Investigation Terminal...
+
+</div>
+
+)}
 
 <BrowserRouter>
 
@@ -33,7 +86,10 @@ function App() {
 
 </BrowserRouter>
 
-  );
+</div>
+
+);
+
 }
 
 export default App;
