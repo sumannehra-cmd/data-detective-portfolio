@@ -56,7 +56,10 @@ textAlign:"center",
 padding:"120px 20px"
 }}>
 
-<h1 style={{fontSize:"48px"}}>
+<h1 style={{
+fontSize:"48px",
+animation:"fadeUp 1s ease"
+}}>
 Hi, I'm Suman
 </h1>
 
@@ -96,6 +99,27 @@ border:"none",
 borderRadius:"6px",
 cursor:"pointer"
 }}>
+Download Resume
+</button><button style={{
+padding:"12px 24px",
+background:"#22c55e",
+border:"none",
+borderRadius:"8px",
+cursor:"pointer",
+transition:"0.3s",
+boxShadow:"0 0 10px rgba(34,197,94,0.3)"
+}}
+
+onMouseEnter={(e)=>{
+e.target.style.transform="translateY(-3px)";
+e.target.style.boxShadow="0 0 20px rgba(34,197,94,0.7)";
+}}
+
+onMouseLeave={(e)=>{
+e.target.style.transform="translateY(0)";
+e.target.style.boxShadow="0 0 10px rgba(34,197,94,0.3)";
+}}
+>
 Download Resume
 </button>
 
