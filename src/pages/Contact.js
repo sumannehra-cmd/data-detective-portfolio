@@ -104,7 +104,7 @@ flexWrap:"wrap"
 
 <a
 href="mailto:suman.23@st.niituniversity.in"
-className="detectiveCard"
+className="contactLink"
 >
 📧 Secure Email
 </a>
@@ -113,7 +113,7 @@ className="detectiveCard"
 href="https://www.linkedin.com/in/suman-nehra-0124a9298/"
 target="_blank"
 rel="noreferrer"
-className="detectiveCard"
+className="contactLink"
 >
 🔗 LinkedIn Network
 </a>
@@ -122,7 +122,7 @@ className="detectiveCard"
 href="https://github.com/sumannehra-cmd"
 target="_blank"
 rel="noreferrer"
-className="detectiveCard"
+className="contactLink"
 >
 💻 Evidence Repository
 </a>
