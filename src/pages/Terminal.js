@@ -16,10 +16,9 @@ const runCommand = (cmd) => {
 
 let newLogs = [...logs, "> " + cmd];
 
-const c = cmd.toLowerCase();
+const c = cmd.toLowerCase().trim();
 
 if(c === "help"){
-newLogs.push("scan dataset");
 newLogs.push("Available Commands:");
 newLogs.push("help");
 newLogs.push("load cases");
@@ -28,6 +27,7 @@ newLogs.push("open case 2");
 newLogs.push("open dashboard");
 newLogs.push("open ml");
 newLogs.push("open contact");
+newLogs.push("scan dataset");
 }
 
 else if(c === "load cases"){
@@ -38,46 +38,43 @@ newLogs.push("Case DS-003 : Sales Forecast");
 
 else if(c === "open case 1"){
 newLogs.push("Opening Case File DS-001...");
-setTimeout(()=>navigate("/projects"),700);
+setTimeout(()=>navigate("/projects"),800);
 }
 
 else if(c === "open case 2"){
 newLogs.push("Opening Case File DS-002...");
-setTimeout(()=>navigate("/projects"),700);
+setTimeout(()=>navigate("/projects"),800);
 }
 
 else if(c === "open dashboard"){
 newLogs.push("Accessing Evidence Lab...");
-setTimeout(()=>navigate("/dashboard"),700);
-}
-
-else if(c === "scan dataset"){
-
-newLogs.push("Scanning dataset...");
-newLogs.push("Detecting anomalies...");
-newLogs.push("Pattern detected.");
-newLogs.push("Launching Evidence Lab...");
-
-setTimeout(()=>navigate("/dashboard"),1500);
-
+setTimeout(()=>navigate("/dashboard"),800);
 }
 
 else if(c === "open ml"){
 newLogs.push("Launching Prediction Engine...");
-setTimeout(()=>navigate("/ml-demo"),700);
+setTimeout(()=>navigate("/ml-demo"),800);
 }
 
 else if(c === "open contact"){
 newLogs.push("Opening Secure Channel...");
-setTimeout(()=>navigate("/contact"),700);
+setTimeout(()=>navigate("/contact"),800);
 }
 
+else if(c === "scan dataset"){
+newLogs.push("Scanning dataset...");
+newLogs.push("Analyzing records...");
+newLogs.push("Pattern detected.");
+newLogs.push("Launching Evidence Lab...");
+setTimeout(()=>navigate("/dashboard"),1500);
+}
 
 else{
 newLogs.push("Unknown command. Type 'help'.");
 }
 
 setLogs(newLogs);
+
 };
 
 const handleKey = (e) => {
