@@ -109,3 +109,57 @@ box-shadow:0 0 20px rgba(34,197,94,0.6);
 background:rgba(34,197,94,0.1);
 
 }
+
+.aboutPage{
+
+padding:120px 20px;
+text-align:center;
+
+}
+
+.aboutSubtitle{
+
+color:#94a3b8;
+margin-bottom:40px;
+
+}
+
+.aboutCard{
+
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+margin-bottom:40px;
+
+}
+
+.aboutGrid{
+
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+
+}
+
+.aboutBox{
+
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:12px;
+width:250px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.3s;
+
+}
+
+.aboutBox:hover{
+
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(34,197,94,0.6);
+
+}
