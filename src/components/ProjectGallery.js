@@ -16,10 +16,7 @@ marginTop:"30px"
 
 <div>
 
-<img
-src="/churn-dashboard.png"
-style={{width:"300px",borderRadius:"10px"}}
-/>
+<img src="/churn.png" alt="Customer churn prediction visualization" />
 
 <p>Customer Churn Analysis</p>
 
@@ -27,10 +24,7 @@ style={{width:"300px",borderRadius:"10px"}}
 
 <div>
 
-<img
-src="/sentiment-chart.png"
-style={{width:"300px",borderRadius:"10px"}}
-/>
+<img src="/sentiment.png" alt="Sentiment analysis visualization" />
 
 <p>Sentiment Analysis</p>
 
@@ -38,10 +32,7 @@ style={{width:"300px",borderRadius:"10px"}}
 
 <div>
 
-<img
-src="/sales-forecast.png"
-style={{width:"300px",borderRadius:"10px"}}
-/>
+<img src="/forecast.png" alt="Sales forecasting visualization" />
 
 <p>Sales Forecast</p>
 
