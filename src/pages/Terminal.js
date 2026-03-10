@@ -19,6 +19,7 @@ let newLogs = [...logs, "> " + cmd];
 const c = cmd.toLowerCase();
 
 if(c === "help"){
+newLogs.push("scan dataset");
 newLogs.push("Available Commands:");
 newLogs.push("help");
 newLogs.push("load cases");
@@ -50,6 +51,17 @@ newLogs.push("Accessing Evidence Lab...");
 setTimeout(()=>navigate("/dashboard"),700);
 }
 
+else if(c === "scan dataset"){
+
+newLogs.push("Scanning dataset...");
+newLogs.push("Detecting anomalies...");
+newLogs.push("Pattern detected.");
+newLogs.push("Launching Evidence Lab...");
+
+setTimeout(()=>navigate("/dashboard"),1500);
+
+}
+
 else if(c === "open ml"){
 newLogs.push("Launching Prediction Engine...");
 setTimeout(()=>navigate("/ml-demo"),700);
@@ -59,6 +71,7 @@ else if(c === "open contact"){
 newLogs.push("Opening Secure Channel...");
 setTimeout(()=>navigate("/contact"),700);
 }
+
 
 else{
 newLogs.push("Unknown command. Type 'help'.");
