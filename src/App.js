@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import MLDemo from "./pages/MLDemo";
+import Terminal from "./pages/Terminal";
 
 function App() {
 
@@ -81,6 +82,8 @@ Accessing Investigation Terminal...
 <Route path="/contact" element={<Contact />} />
 
 <Route path="/ml-demo" element={<MLDemo />} />
+
+<Route path="/terminal" element={<Terminal />} />
 
 </Routes>
 

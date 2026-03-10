@@ -27,6 +27,9 @@ textAlign:"center",
 boxShadow:"0px 10px 40px rgba(0,0,0,0.6)"
 }}>
 
+<h2>📂 Opening Case File...</h2>
+<p>Analyzing Evidence...</p>
+
 <h2>{project.title}</h2>
 
 <img
