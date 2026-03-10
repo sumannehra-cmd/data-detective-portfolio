@@ -10,18 +10,31 @@ return(
 Background file of the Data Detective.
 </p>
 
-<div className="aboutCard">
+<div className="profileCard">
 
-<h2>Agent Information</h2>
+<img
+src="/profile.jpg"
+alt="Suman profile"
+className="profileImage"
+/>
+
+<div className="profileInfo">
+
+<h2>Agent Suman</h2>
+
+<p className="agentRole">
+Data Detective | Machine Learning Enthusiast
+</p>
 
 <p>
-I am a Computer Science student passionate about Data Science and Machine Learning.
-I enjoy investigating datasets, building predictive models, and uncovering hidden
-patterns inside data.
+Computer Science student passionate about Data Science and Machine Learning.
+I enjoy investigating datasets, building predictive models, and uncovering
+hidden patterns inside data.
 </p>
 
 </div>
 
+</div>
 
 <div className="aboutGrid">
 
@@ -56,7 +69,7 @@ NLP
 <h3>🎯 Mission</h3>
 
 <p>
-To use data science and machine learning to solve real-world problems
+Use data science and machine learning to solve real-world problems
 and uncover insights hidden inside complex datasets.
 </p>
 
