@@ -16,33 +16,33 @@ const projects = [
 title:"Customer Churn Investigation",
 category:"ml",
 tools:"Python | Pandas | ML",
-image:"/churn.png",
-description:"Predicts whether a customer will leave a telecom service using machine learning models.",
-github:"https://github.com/sumannehra-cmd/Customer-Churn-Prediction-Project.git",
+model:"Random Forest",
+dataset:"Telecom Dataset (7000 records)",
+accuracy:"87%",
 status:"Closed Case",
-color:"#22c55e"
+github:"https://github.com/sumannehra-cmd/Customer-Churn-Prediction-Project.git"
 },
 
 {
 title:"Customer Sentiment Intelligence",
 category:"nlp",
 tools:"Python | NLP | Machine Learning",
-image:"/sentiment.png",
-description:"Analyzes customer reviews and determines whether sentiment is positive or negative.",
-github:"#",
+model:"Logistic Regression",
+dataset:"Product Reviews Dataset",
+accuracy:"82%",
 status:"Investigation Ongoing",
-color:"#facc15"
+github:"#"
 },
 
 {
 title:"Sales Forecast Investigation",
 category:"ml",
-image:"/forecast.png",
 tools:"Python | Time Series | ML",
-description:"Predicts future sales trends using time series forecasting models.",
-github:"#",
+model:"ARIMA",
+dataset:"Retail Sales Dataset",
+accuracy:"TBD",
 status:"Upcoming Case",
-color:"#38bdf8"
+github:"#"
 }
 
 ];
@@ -137,7 +137,40 @@ marginBottom:"10px"
 
 <h3>{project.title}</h3>
 
-<p>{project.tools}</p>
+<p style={{color:"#94a3b8"}}>{project.tools}</p>
+
+<p>
+🧠 Model: {project.model}
+</p>
+
+<p>
+📊 Dataset: {project.dataset}
+</p>
+
+<p>
+⚡ Accuracy: {project.accuracy}
+</p>
+
+<p style={{color:"#22c55e"}}>
+{project.status}
+</p>
+
+<a
+href={project.github}
+target="_blank"
+rel="noreferrer"
+>
+<button style={{
+marginTop:"10px",
+padding:"8px 15px",
+background:"#38bdf8",
+border:"none",
+borderRadius:"6px",
+cursor:"pointer"
+}}>
+View Evidence
+</button>
+</a>
 
 <div style={{marginTop:"10px"}}>
 
