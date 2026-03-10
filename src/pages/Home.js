@@ -92,7 +92,8 @@ machine learning models to solve real-world problems.
 
 <a href="/resume.pdf" target="_blank" rel="noreferrer">
 
-</button><button style={{
+<button
+style={{
 padding:"12px 24px",
 background:"#22c55e",
 border:"none",
@@ -113,7 +114,10 @@ e.target.style.boxShadow="0 0 10px rgba(34,197,94,0.3)";
 }}
 >
 Download Resume
+
 </button>
+
+</a>
 
 </a>
 
