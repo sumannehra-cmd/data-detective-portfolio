@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import About from "./pages/About";
 import CaseFiles from "./pages/CaseFiles";
 import Dashboard from "./pages/Dashboard";
@@ -10,6 +10,9 @@ import Home from "./pages/Home";
 import MLDemo from "./pages/MLDemo";
 import Terminal from "./pages/Terminal";
 import MLPlayground from "./pages/MLPlayground";
+import ModelPlayer from "./components/ModelPlayer";
+
+import { PlayerProvider } from "./context/PlayerContext";
 
 function App() {
 
@@ -40,6 +43,8 @@ window.removeEventListener("keydown",handleKey);
 
 return (
 
+<PlayerProvider>
+
 <div>
 
 {detectiveMode && (
@@ -68,31 +73,43 @@ Accessing Investigation Terminal...
 
 <BrowserRouter>
 
-<Navbar />
+<Sidebar />
+
+<div style={{marginLeft:"240px"}}>
+
+<div style={{
+position:"sticky",
+top:0,
+background:"#121212",
+padding:"15px 30px",
+borderBottom:"1px solid #222",
+zIndex:10
+}}>
+
+<h3 style={{color:"#b3b3b3"}}>
+Suman • Data Science Portfolio
+</h3>
+
+</div>
 
 <Routes>
 
 <Route path="/" element={<Home />} />
-
-<Route path="/about" element={<About />} />
-
 <Route path="/projects" element={<CaseFiles />} />
-
 <Route path="/dashboard" element={<Dashboard />} />
-
 <Route path="/contact" element={<Contact />} />
 
-<Route path="/ml-demo" element={<MLDemo />} />
-
-<Route path="/terminal" element={<Terminal />} />
-
-<Route path="/playground" element={<MLPlayground />} />
-
 </Routes>
+
+</div>
+
+<ModelPlayer />
 
 </BrowserRouter>
 
 </div>
+
+</PlayerProvider>
 
 );
 

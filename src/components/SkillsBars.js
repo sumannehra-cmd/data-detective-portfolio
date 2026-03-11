@@ -18,7 +18,10 @@ margin:"80px auto",
 padding:"20px"
 }}>
 
-<h2 style={{textAlign:"center"}}>Skills Overview</h2>
+<h2>🧰 Data Scientist Toolkit</h2>
+<p style={{color:"#94a3b8"}}>
+Tools I use to investigate data and build machine learning models.
+</p>
 
 {skills.map((skill,index)=>(
 

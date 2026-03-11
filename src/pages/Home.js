@@ -1,150 +1,146 @@
-import { Typewriter } from "react-simple-typewriter";
-import Particles from "@tsparticles/react";
-import { loadFull } from "tsparticles";
-
-import AnimatedPage from "../components/AnimatedPage";
-import ProjectGallery from "../components/ProjectGallery";
-import SkillsBars from "../components/SkillsBars";
-import ExperienceTimeline from "../components/ExperienceTimeline";
-import GithubStats from "../components/GithubStats";
-import DataProcessStory from "../components/DataProcessStory";
-import DataTimeline from "../components/DataTimeline";
+import { useNavigate } from "react-router-dom";
+import ExperimentCard from "../components/ExperimentCard";
 
 function Home(){
 
-const particlesInit = async (main) => {
-  await loadFull(main);
-};
+const navigate = useNavigate();
 
-return (
-
-<AnimatedPage>
-
-<div>
-
-<Particles
-id="tsparticles"
-init={particlesInit}
-options={{
-background:{color:{value:"#0f172a"}},
-fpsLimit:60,
-particles:{
-color:{value:"#22c55e"},
-links:{
-color:"#22c55e",
-distance:150,
-enable:true,
-opacity:0.3,
-width:1
+const experiments = [
+{
+title:"Customer Churn Prediction",
+category:"Machine Learning",
+link:"/projects"
 },
-move:{enable:true,speed:1},
-number:{value:60},
-opacity:{value:0.5},
-shape:{type:"circle"},
-size:{value:{min:1,max:3}}
+{
+title:"Sentiment Analysis",
+category:"NLP",
+link:"/projects"
+},
+{
+title:"Sales Forecasting",
+category:"Time Series",
+link:"/projects"
 }
-}}
-style={{
-position:"fixed",
-top:0,
-left:0,
-width:"100%",
-height:"100%",
-zIndex:-1
-}}
-/>
+];
 
-<div
-style={{
-textAlign:"center",
-padding:"120px 20px"
-}}
->
+return(
 
-<h1
-style={{
-fontSize:"48px",
-animation:"fadeUp 1s ease"
-}}
->
-Hi, I'm Suman
+<div style={{
+padding:"30px",
+color:"white"
+}}>
+
+<div style={{
+background:"linear-gradient(180deg,#1DB954 0%, #121212 60%)",
+padding:"40px 30px",
+borderRadius:"10px",
+marginBottom:"30px"
+}}>
+
+<h1 style={{fontSize:"32px"}}>
+Good Evening
 </h1>
 
-<h2 style={{color:"#22c55e",marginTop:"20px"}}>
-
-<Typewriter
-words={[
-"Data Scientist",
-"Machine Learning Enthusiast",
-"Data Analyst"
-]}
-loop={true}
-cursor
-cursorStyle="|"
-typeSpeed={80}
-deleteSpeed={50}
-delaySpeed={1500}
-/>
-
-</h2>
-
-<p style={{
-maxWidth:"600px",
-margin:"20px auto",
-color:"#94a3b8"
-}}>
-I investigate datasets, uncover hidden patterns,
-and build machine learning models to solve real-world problems.
-Welcome to my Data Detective Lab.
+<p style={{color:"#b3b3b3"}}>
+Welcome to Suman's Data Experiments
 </p>
 
-<a href="/resume.pdf" target="_blank" rel="noreferrer">
+</div>
+
+{/* Featured Model */}
+
+<div style={{
+background:"#181818",
+padding:"25px",
+borderRadius:"10px",
+marginBottom:"40px"
+}}>
+
+<h2>Featured Model</h2>
+
+<h3 style={{marginTop:"10px"}}>
+Customer Churn Prediction
+</h3>
+
+<p style={{color:"#b3b3b3"}}>
+Random Forest Model • Accuracy 87%
+</p>
 
 <button
+onClick={()=>navigate("/projects")}
 style={{
-padding:"12px 24px",
-background:"#22c55e",
+marginTop:"15px",
+background:"#1DB954",
 border:"none",
-borderRadius:"8px",
-cursor:"pointer",
-transition:"0.3s",
-boxShadow:"0 0 10px rgba(34,197,94,0.3)"
-}}
-
-onMouseEnter={(e)=>{
-e.target.style.transform="translateY(-3px)";
-e.target.style.boxShadow="0 0 20px rgba(34,197,94,0.7)";
-}}
-
-onMouseLeave={(e)=>{
-e.target.style.transform="translateY(0)";
-e.target.style.boxShadow="0 0 10px rgba(34,197,94,0.3)";
+padding:"10px 18px",
+borderRadius:"20px",
+cursor:"pointer"
 }}
 >
-Download Resume
+View Experiment
 </button>
 
-</a>
+</div>
+
+{/* Top Experiments */}
+
+<h2 style={{marginBottom:"20px"}}>
+Top Experiments
+</h2>
+
+<div style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",
+gap:"20px"
+}}>
+
+{experiments.map((exp,index)=>(
+
+<ExperimentCard
+key={index}
+title={exp.title}
+category={exp.category}
+/>
+
+))}
 
 </div>
 
-<ProjectGallery />
+{/* Data Library */}
 
-<SkillsBars />
+<h2 style={{
+marginTop:"50px",
+marginBottom:"20px"
+}}>
+Your Data Library
+</h2>
 
-<ExperienceTimeline />
+<div style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",
+gap:"20px"
+}}>
 
-<GithubStats />
+<ExperimentCard
+title="Machine Learning Models"
+category="Collection"
+/>
 
-<DataProcessStory />
+<ExperimentCard
+title="Data Analysis Projects"
+category="Collection"
+/>
 
-<DataTimeline />
+<ExperimentCard
+title="Data Visualizations"
+category="Collection"
+/>
 
 </div>
 
-</AnimatedPage>
+</div>
 
-);
+)
 
 }
 

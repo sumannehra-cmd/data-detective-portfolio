@@ -17,7 +17,8 @@ textAlign:"center"
 }}>
 
 <h2 style={{fontSize:"36px"}}>
-🕵️ Open Investigation
+Have a dataset that needs investigation?
+Let's work together.
 </h2>
 
 <p style={{
