@@ -7,6 +7,8 @@ import ProjectGallery from "../components/ProjectGallery";
 import SkillsBars from "../components/SkillsBars";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import GithubStats from "../components/GithubStats";
+import DataProcessStory from "../components/DataProcessStory";
+import DataTimeline from "../components/DataTimeline";
 
 function Home(){
 
@@ -133,6 +135,10 @@ Download Resume
 <ExperienceTimeline />
 
 <GithubStats />
+
+<DataProcessStory />
+
+<DataTimeline />
 
 </div>
 

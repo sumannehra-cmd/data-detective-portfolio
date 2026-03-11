@@ -53,7 +53,9 @@ return(
 
 <div className="section">
 
-<h2>📊 Investigation Projects</h2>
+<h2 style={{fontSize:"34px"}}>
+🕵️ Machine Learning Case Investigations
+</h2>
 
 <div style={{margin:"20px"}}>
 
@@ -102,7 +104,7 @@ project.tools.toLowerCase().includes(search.toLowerCase())
 
 <div
 key={index}
-className="card"
+className="caseFile"
 onClick={()=>setSelectedProject(project)}
 style={{
 backdropFilter:"blur(10px)",
@@ -125,17 +127,11 @@ e.currentTarget.style.boxShadow="0px 5px 20px rgba(0,0,0,0.4)";
 }}
 >
 
-<img
-src={project.image}
-alt={project.title}
-style={{
-width:"100%",
-borderRadius:"8px",
-marginBottom:"10px"
-}}
-/>
+<h3 style={{color:"#38bdf8"}}>
+📂 Case File #{index+1}
+</h3>
 
-<h3>{project.title}</h3>
+<h2>{project.title}</h2>
 
 <p style={{color:"#94a3b8"}}>{project.tools}</p>
 
@@ -147,8 +143,8 @@ marginBottom:"10px"
 📊 Dataset: {project.dataset}
 </p>
 
-<p>
-⚡ Accuracy: {project.accuracy}
+<p style={{color:"#22c55e",fontWeight:"bold"}}>
+⚡ Model Accuracy: {project.accuracy}
 </p>
 
 <p style={{color:"#22c55e"}}>
@@ -159,7 +155,9 @@ marginBottom:"10px"
 href={project.github}
 target="_blank"
 rel="noreferrer"
+onClick={(e)=>e.stopPropagation()}
 >
+
 <button style={{
 marginTop:"10px",
 padding:"8px 15px",
@@ -170,6 +168,7 @@ cursor:"pointer"
 }}>
 View Evidence
 </button>
+
 </a>
 
 <div style={{marginTop:"10px"}}>
@@ -181,10 +180,6 @@ View Evidence
 <SiScikitlearn size={20} style={{margin:"5px"}}/>
 
 </div>
-
-<p style={{color:project.color}}>
-{project.status}
-</p>
 
 </div>
 
@@ -199,7 +194,7 @@ closeModal={()=>setSelectedProject(null)}
 
 </div>
 
-</AnimatedPage> 
+</AnimatedPage>
 
 )
 

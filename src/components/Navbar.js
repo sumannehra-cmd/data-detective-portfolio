@@ -53,6 +53,16 @@ Open Case
 Console
 </NavLink>
 
+<NavLink
+to="/playground"
+style={({isActive}) => ({
+...linkBase,
+color: isActive ? "#38bdf8" : "#e2e8f0"
+})}
+>
+Playground
+</NavLink>
+
 </div>
 
 </div>

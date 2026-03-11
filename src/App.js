@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import MLDemo from "./pages/MLDemo";
 import Terminal from "./pages/Terminal";
+import MLPlayground from "./pages/MLPlayground";
 
 function App() {
 
@@ -84,6 +85,8 @@ Accessing Investigation Terminal...
 <Route path="/ml-demo" element={<MLDemo />} />
 
 <Route path="/terminal" element={<Terminal />} />
+
+<Route path="/playground" element={<MLPlayground />} />
 
 </Routes>
 
