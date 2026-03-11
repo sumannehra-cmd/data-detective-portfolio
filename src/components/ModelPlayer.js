@@ -1,64 +1,58 @@
-import { useState } from "react";
-import { useContext } from "react";
-import { PlayerContext } from "../context/PlayerContext";
+import { usePlayer } from "../context/PlayerContext";
 
 function ModelPlayer(){
 
-const [playing,setPlaying] = useState(false);
-const { currentModel } = useContext(PlayerContext);
+const {currentModel} = usePlayer();
+
+if(!currentModel) return null;
 
 return(
 
-<div style={{
+<div
+style={{
 position:"fixed",
 bottom:0,
-left:240,
+left:0,
 right:0,
-height:"80px",
+height:"90px",
 background:"#181818",
 borderTop:"1px solid #282828",
 display:"flex",
 alignItems:"center",
 justifyContent:"space-between",
 padding:"0 30px",
-zIndex:100
-}}>
-
-{/* Model Info */}
+color:"white",
+zIndex:999
+}}
+>
 
 <div>
 
-<h4>
-{currentModel ? currentModel.title : "No Model Selected"}
+<h4 style={{margin:0}}>
+{currentModel.title}
 </h4>
 
-<p>
-{currentModel ? currentModel.category : "Click an experiment"}
+<p style={{
+margin:0,
+color:"#b3b3b3",
+fontSize:"14px"
+}}>
+{currentModel.category}
 </p>
 
 </div>
 
-{/* Play Button */}
+<div style={{fontSize:"22px"}}>
 
-<div>
+⏮ ▶ ⏭
 
-<button
-onClick={()=>setPlaying(!playing)}
-style={{
-background:"#1DB954",
-border:"none",
-width:"45px",
-height:"45px",
-borderRadius:"50%",
-fontSize:"18px",
-cursor:"pointer"
-}}
->
+</div>
 
-{playing ? "❚❚" : "▶"}
-
-</button>
-
+<div style={{
+fontSize:"14px",
+color:"#b3b3b3"
+}}>
+Model Running
 </div>
 
 </div>

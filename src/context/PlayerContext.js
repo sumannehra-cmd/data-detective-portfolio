@@ -1,19 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const PlayerContext = createContext();
 
-export function PlayerProvider({children}){
+export function PlayerProvider({ children }) {
 
-const [currentModel,setCurrentModel] = useState(null);
+const [currentModel, setCurrentModel] = useState(null);
 
-return(
+return (
 
-<PlayerContext.Provider value={{currentModel,setCurrentModel}}>
-
+<PlayerContext.Provider value={{ currentModel, setCurrentModel }}>
 {children}
-
 </PlayerContext.Provider>
 
 );
 
+}
+
+export function usePlayer() {
+return useContext(PlayerContext);
 }
